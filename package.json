@@ -1,0 +1,17 @@
+{
+  "name": "manga-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Application Android Manga vers Video",
+  "scripts": {
+    "build:apk": "node scripts/build-apk.mjs"
+  },
+  "dependencies": {
+    "@capacitor-community/text-to-speech": "8.0.2",
+    "@capacitor/android": "8.5.3",
+    "@capacitor/core": "8.5.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.5.3"
+  }
+}
