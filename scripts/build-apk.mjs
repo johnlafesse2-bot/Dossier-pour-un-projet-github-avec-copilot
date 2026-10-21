@@ -1,4 +1,4 @@
-import { copyFileSync, existsSync, mkdirSync } from 'node:fs';
+import { existsSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -17,9 +17,7 @@ function run(command, args, cwd = root) {
   if (result.status !== 0) process.exit(result.status ?? 1);
 }
 
-const webDir = resolve(root, 'www');
-mkdirSync(webDir, { recursive: true });
-copyFileSync(resolve(root, 'index.html'), resolve(webDir, 'index.html'));
+run('npm', ['run', 'build']);
 
 if (!existsSync(resolve(root, 'android'))) {
   run('npx', ['cap', 'add', 'android']);

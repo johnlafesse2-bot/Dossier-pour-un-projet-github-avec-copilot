@@ -4,6 +4,7 @@
   "private": true,
   "description": "Application Android Manga vers Video",
   "scripts": {
+    "build": "node scripts/build-web.mjs",
     "build:apk": "node scripts/build-apk.mjs"
   },
   "dependencies": {
